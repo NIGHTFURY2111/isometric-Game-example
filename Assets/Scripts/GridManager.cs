@@ -12,7 +12,8 @@ public class GridManager : MonoBehaviour
         GenerateGrid();
     }
     void GenerateGrid()
-    {//generates a grid of size "gridSize" from origin 
+    {
+        //---------------generates a grid of size "gridSize" from origin---------------
         for (int x = 0; x < gridSize; x++)
         {
             for (int y = 0; y < gridSize; y++)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TileInfo : MonoBehaviour
 {   
-    //  x and y coordinates of the tile
+    //x and y coordinates of the tile
     int _x, _y; 
 
     public void SetPosition(int x, int y)
