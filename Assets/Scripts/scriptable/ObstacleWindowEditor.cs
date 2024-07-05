@@ -14,7 +14,7 @@ public class ObstacleWindowEditor : EditorWindow
 
     private void OnGUI()
     {
-        //---------------Window Definition---------------
+        //Window Definition
 
         GUILayout.Label("Obstacle Editor", EditorStyles.boldLabel);
         obstacleData = (ObstacleData)EditorGUILayout.ObjectField("Obstacle Data", obstacleData, typeof(ObstacleData), false);
@@ -24,7 +24,7 @@ public class ObstacleWindowEditor : EditorWindow
             return;
         }
         
-        //---------------Drawing Boxes---------------
+        //Drawing Boxes
 
         for (int y = 0; y < 10; y++)
         {
@@ -38,7 +38,7 @@ public class ObstacleWindowEditor : EditorWindow
             EditorGUILayout.EndHorizontal();
         }
 
-        //---------------Save Button---------------
+        //Save Button
         
         if (GUILayout.Button("Save"))
         {

@@ -7,8 +7,10 @@ public class PriorityQueue<T> where T : IHeapItem<T>
 {
     private List<T> items = new List<T>();
 
+    // Property to get the number of items in the priority queue
     public int Count => items.Count;
 
+    // Adds an item to the priority queue
     public void Enqueue(T item)
     {
         item.HeapIndex = items.Count;
@@ -16,6 +18,7 @@ public class PriorityQueue<T> where T : IHeapItem<T>
         HeapifyUp(item.HeapIndex);
     }
 
+    // Removes and returns the item with the highest priority (lowest value)
     public T Dequeue()
     {
         if (Count == 0) throw new InvalidOperationException("The priority queue is empty.");
@@ -34,16 +37,19 @@ public class PriorityQueue<T> where T : IHeapItem<T>
         return firstItem;
     }
 
+    // Updates the position of an item in the priority queue
     public void UpdateItem(T item)
     {
         HeapifyUp(item.HeapIndex);
     }
 
+    // Checks if the priority queue contains a specific item
     public bool Contains(T item)
     {
         return item.HeapIndex < items.Count;
     }
 
+    // Restores the heap property by moving the item up the tree
     private void HeapifyUp(int index)
     {
         T item = items[index];
@@ -62,6 +68,7 @@ public class PriorityQueue<T> where T : IHeapItem<T>
         item.HeapIndex = index;
     }
 
+    // Restores the heap property by moving the item down the tree
     private void HeapifyDown(int index)
     {
         T item = items[index];
@@ -92,6 +99,7 @@ public class PriorityQueue<T> where T : IHeapItem<T>
     }
 }
 
+// Interface for items that can be stored in a heap
 public interface IHeapItem<T> : IComparable<T>
 {
     int HeapIndex { get; set; }

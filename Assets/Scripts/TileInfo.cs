@@ -14,7 +14,7 @@ public class TileInfo : MonoBehaviour
     }
 
     #region Getters
-    public int x { get =>_x; }
-    public int y { get =>_y; }
+    public int X { get =>_x; }
+    public int Y { get =>_y; }
     #endregion
 }
